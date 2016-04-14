@@ -51,8 +51,8 @@ var svg = d3.select("body").append("svg")
     .attr("height", height);
 
 queue()
-    .defer(d3.json, "us.json")
-    .defer(d3.tsv, "data.tsv", function(d) { rateById.set(d.id, +d.rate); })
+    .defer(d3.json, "http://laraibkazi92.github.io/us.json")
+    .defer(d3.tsv, "http://laraibkazi92.github.io/data.tsv", function(d) { rateById.set(d.id, +d.rate); })
     .await(ready);
 
 function ready(error, us) {
